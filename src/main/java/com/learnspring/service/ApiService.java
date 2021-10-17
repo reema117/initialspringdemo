@@ -6,13 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.learnspring.domain.StatusDomain;
+import com.learnspring.model.EmployeeDetails;
 import com.learnspring.model.Status;
+import com.learnspring.repo.EmployeeRepository;
 import com.learnspring.repo.StatusRepository;
 
 @Service
 public class ApiService {
 	@Autowired 
 	private StatusRepository statusRepository;
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
+	
+	
 	
 	public Status apiStatus() {
 		
@@ -22,6 +29,14 @@ public class ApiService {
 		StatusDomain value = statusDomain.get();
 		st.setApiStatus(value.getStatus());
 		return st;
+		
+	}
+	
+	public EmployeeDetails apiEmployee() {
+		
+		EmployeeDetails apiEmp = new EmployeeDetails();
+		employeeRepository.findById("101");
+		return apiEmp;
 		
 	}
 }
