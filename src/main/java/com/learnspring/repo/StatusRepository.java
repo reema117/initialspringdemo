@@ -7,7 +7,7 @@ import com.learnspring.domain.StatusDomain;
 
 
 @Repository
-public interface StatusRepository extends CrudRepository<StatusDomain, String> {
+public interface StatusRepository extends CrudRepository<StatusDomain, Long> {
 
 	
 }
