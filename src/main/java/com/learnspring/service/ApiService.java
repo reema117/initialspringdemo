@@ -17,8 +17,8 @@ public class ApiService {
 	public Status apiStatus() {
 		
 		Status st = new Status();
-		String insertId = Long.toString(1);
-		Optional<StatusDomain> statusDomain = statusRepository.findById(insertId);
+		//String insertId = Long.toString(1);
+		Optional<StatusDomain> statusDomain = statusRepository.findById(Long.parseLong("1"));
 		StatusDomain value = statusDomain.get();
 		st.setApiStatus(value.getStatus());
 		return st;
