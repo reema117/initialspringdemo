@@ -13,25 +13,25 @@ public class EmployeeDomain implements Serializable {
 
 	@Id
 	@Column(name = "employee_ID")
-	private String Employee_ID;
+	private String EmployeeID;
 	
 	@Column(name = "employee_Name")
-	private String Employee_Name;
+	private String EmployeeName;
 
 	public String getEmployee_ID() {
-		return Employee_ID;
+		return EmployeeID;
 	}
 
 	public void setEmployee_ID(String employee_ID) {
-		Employee_ID = employee_ID;
+		Employee_ID = employeeID;
 	}
 
 	public String getEmployee_Name() {
-		return Employee_Name;
+		return EmployeeName;
 	}
 
 	public void setEmployee_Name(String employee_Name) {
-		Employee_Name = employee_Name;
+		EmployeeName = employee_Name;
 	}
 	
 	
