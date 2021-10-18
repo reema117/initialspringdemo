@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EMPLOYEE_STATUSS")
+@Table(name = "EMPLOYEE_STATUS")
 public class EmployeeDomain implements Serializable {
 	
 	//private static final long serialVersionUID = 1L;
