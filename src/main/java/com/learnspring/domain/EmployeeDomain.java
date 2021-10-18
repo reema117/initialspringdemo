@@ -11,30 +11,32 @@ import javax.persistence.Table;
 @Table(name = "EMPLOYEE_STATUS")
 public class EmployeeDomain implements Serializable {
 	
-	//private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column(name = "employee_ID")
-	private String EmployeeID;
+	private String employeeID;
 	
 	@Column(name = "employee_Name")
-	private String EmployeeName;
+	private String employeeName;
 
-	public String getEmployee_ID() {
-		return EmployeeID;
+	public String getEmployeeID() {
+		return employeeID;
 	}
 
-	public void setEmployee_ID(String employee_ID) {
-		EmployeeID = employee_ID;
+	public void setEmployeeID(String employeeID) {
+		this.employeeID = employeeID;
 	}
 
-	public String getEmployee_Name() {
-		return EmployeeName;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public void setEmployee_Name(String employee_Name) {
-		EmployeeName = employee_Name;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
+
+	
 	
 	
 }
