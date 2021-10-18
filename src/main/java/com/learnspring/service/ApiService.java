@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.learnspring.domain.StatusDomain;
 import com.learnspring.model.EmployeeDetails;
+import com.learnspring.model.FetchEmployeeDetails;
 import com.learnspring.model.Status;
 import com.learnspring.repo.EmployeeRepository;
 import com.learnspring.repo.StatusRepository;
@@ -32,10 +33,11 @@ public class ApiService {
 		
 	}
 	
-	public EmployeeDetails apiEmployee() {
+	public EmployeeDetails apiEmployee(FetchEmployeeDetails fetchEmployeeDetails) {
 		
 		EmployeeDetails apiEmp = new EmployeeDetails();
-		employeeRepository.findById("101");
+		apiEmp = employeeRepository.findByEmployee_ID(fetchEmployeeDetails.getFetchDetailsRequest().getEmployeeId());
+		System.out.println("api emp is " +apiEmp.getEmplyeeName());
 		return apiEmp;
 		
 	}
