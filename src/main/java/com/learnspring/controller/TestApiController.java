@@ -17,30 +17,30 @@ import com.learnspring.model.FetchEmployeeDetails;
 import com.learnspring.model.Status;
 import com.learnspring.service.ApiService;
 
-
-@RestController 
-@CrossOrigin("*")//it will take any domain 
+@RestController
+@CrossOrigin("*") // it will take any domain
 @RequestMapping("/api/")
 public class TestApiController {
-	
-	@Autowired 
+
+	@Autowired
 	private ApiService apiService;
-	
-	
-	@GetMapping(value= "serviceStatus", produces= MediaType.APPLICATION_JSON_VALUE)
+
+	@GetMapping(value = "serviceStatus", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Status> serviceStatus() {
-		Status status =apiService.apiStatus();
-		return new 	ResponseEntity<>(status,HttpStatus.OK);
-				}
-	@PostMapping(value = "getDetails",  consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<EmployeeDetails> employeeDetails(
-	@RequestBody FetchEmployeeDetails fetchEmployeeDetails
-			)
-	{
-		EmployeeDetails employeeDetails = apiService.apiEmployee(fetchEmployeeDetails);
-		
-		return new 	ResponseEntity<>(employeeDetails,HttpStatus.OK);
-		
+		Status status = apiService.apiStatus();
+		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
-	
+
+	@PostMapping(value = "getDetails", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<EmployeeDetails> employeeDetails(@RequestBody FetchEmployeeDetails fetchEmployeeDetails) {
+		EmployeeDetails employeeDetails = new EmployeeDetails();
+		try {
+			employeeDetails = apiService.apiEmployee(fetchEmployeeDetails);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<>(employeeDetails, HttpStatus.OK);
+
+	}
+
 }
