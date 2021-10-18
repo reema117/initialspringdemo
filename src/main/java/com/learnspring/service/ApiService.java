@@ -36,7 +36,7 @@ public class ApiService {
 	public EmployeeDetails apiEmployee(FetchEmployeeDetails fetchEmployeeDetails) {
 		
 		EmployeeDetails apiEmp = new EmployeeDetails();
-		apiEmp = employeeRepository.findByEmployee_ID(fetchEmployeeDetails.getFetchDetailsRequest().getEmployeeId());
+		apiEmp = employeeRepository.findByEmployeeID(fetchEmployeeDetails.getFetchDetailsRequest().getEmployeeId());
 		System.out.println("api emp is " +apiEmp.getEmplyeeName());
 		return apiEmp;
 		
