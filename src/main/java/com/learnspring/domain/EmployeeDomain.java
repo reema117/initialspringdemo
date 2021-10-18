@@ -10,7 +10,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "EMPLOYEE_STATUS")
 public class EmployeeDomain implements Serializable {
-
+	
+	//private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(name = "employee_ID")
 	private String EmployeeID;
@@ -23,7 +25,7 @@ public class EmployeeDomain implements Serializable {
 	}
 
 	public void setEmployee_ID(String employee_ID) {
-		Employee_ID = employeeID;
+		EmployeeID = employee_ID;
 	}
 
 	public String getEmployee_Name() {
