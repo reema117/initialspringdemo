@@ -32,7 +32,7 @@ public class TestApiController {
 		Status status =apiService.apiStatus();
 		return new 	ResponseEntity<>(status,HttpStatus.OK);
 				}
-	@PostMapping(value = "/getDetails",  consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "getDetails",  consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<EmployeeDetails> employeeDetails(
 	@RequestBody FetchEmployeeDetails fetchEmployeeDetails
 			)
