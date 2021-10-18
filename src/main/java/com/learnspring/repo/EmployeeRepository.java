@@ -12,7 +12,7 @@ import com.learnspring.model.EmployeeDetails;
 @Repository
 public interface EmployeeRepository extends CrudRepository<EmployeeDomain, String> {
 
-	EmployeeDetails findByEmployeeID(String employeeId);
+	EmployeeDomain findByEmployeeID(String employeeId);
 		
 }
 
