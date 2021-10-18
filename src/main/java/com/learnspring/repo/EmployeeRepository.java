@@ -5,11 +5,14 @@ import org.springframework.stereotype.Repository;
 
 import com.learnspring.domain.EmployeeDomain;
 import com.learnspring.domain.StatusDomain;
+import com.learnspring.model.EmployeeDetails;
 
 
 
 @Repository
 public interface EmployeeRepository extends CrudRepository<EmployeeDomain, String> {
+
+	EmployeeDetails findByEmployee_ID(String employeeId);
 		
 }
 
