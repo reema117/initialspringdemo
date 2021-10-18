@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.learnspring.domain.EmployeeDomain;
 import com.learnspring.domain.StatusDomain;
 import com.learnspring.model.EmployeeDetails;
 import com.learnspring.model.FetchEmployeeDetails;
@@ -36,7 +37,10 @@ public class ApiService {
 	public EmployeeDetails apiEmployee(FetchEmployeeDetails fetchEmployeeDetails) {
 		
 		EmployeeDetails apiEmp = new EmployeeDetails();
-		apiEmp = employeeRepository.findByEmployeeID(fetchEmployeeDetails.getFetchDetailsRequest().getEmployeeId());
+		EmployeeDomain employeeDomain = new EmployeeDomain();
+		employeeDomain = employeeRepository.findByEmployeeID(fetchEmployeeDetails.getFetchDetailsRequest().getEmployeeId());
+		apiEmp.setEmplyeeName(employeeDomain.getEmployeeName());
+		apiEmp.setEmployeeId(employeeDomain.getEmployeeID());
 		System.out.println("api emp is " +apiEmp.getEmplyeeName());
 		return apiEmp;
 		
